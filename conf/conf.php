@@ -1,5 +1,5 @@
 <?php 
-require_once "bdd_dev.inc.php";
+require_once "bdd_dev.php";
 
 $PREFIX_BDD = "rel_";
 
@@ -25,10 +25,10 @@ $XML_PATH_CONFFILE = "$DOCUMENT_ROOT/$PATH_WEB_RELATIF/releve/graphe/generation/
 
 $MODE_DEBUG = 1;
 
-require_once "utilitaire.inc.php";
-require_once "cerreur.inc.php";
-require_once "cconnexion.inc.php";
-require_once "template_ihm.inc.php";
+require_once "../classe/cutilitaire.php";
+require_once "../classe/cerreur.php";
+require_once "../classe/cconnexion.php";
+require_once "../classe/cihm.php";
 
 // L'ordre est important :
 $ihm = new CIhm();

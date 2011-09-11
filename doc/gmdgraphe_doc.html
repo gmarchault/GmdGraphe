@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  
+
+
+  
+  <title>Specifications GmdGraphe</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+
+  
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+
+<body style="background-color: rgb(255, 255, 255);">
+
+
+<p class="titre" style="text-align: left;"><font face="Arial, Helvetica, sans-serif" size="2">
+Sp&eacute;cifications </font><font face="Arial, Helvetica, sans-serif" size="2"><font size="3"><i><font color="#0000ff">GmdGraphe</font></i></font></font></p>
+
+
+<p><span style="font-weight: bold;">Date :</span> v 0.2
+- 29/09/2006<br>
+
+
+<span style="font-weight: bold;">Auteur :</span> gm (<a href="mailto:gmarchault@yahoo.com">gmarchault@yahoo.com</a>)</p>
+
+
+
+<p style="color: rgb(0, 0, 0);" class="rubrique"><font face="Arial, Helvetica, sans-serif" size="2">Description</font></p>
+
+
+<p>Repr&eacute;sentation
+graphique dynamique d'un jeux de dataset dont les donn&eacute;es
+sont issues d'un tableau.</p>
+
+
+<p><font style="color: rgb(0, 0, 0);" class="rubrique" color="#0000ff">Remarques sur l'utilisation de cette classe</font><br>
+
+
+<br>
+
+
+- Php doit disposer du module gd compil&eacute; avec l'extension
+jpg et/ou png et/ou gif.<br>
+
+
+<span style="text-decoration: line-through;"> - Les images
+sont cr&eacute;&eacute;es dans un r&eacute;pertoire tmp de
+la racine du serveur web : $DOCUMENT_ROOT/tmp</span><br>
+
+
+- Possibilit&eacute; de d&eacute;finir un style css pour
+l'affichage du titre : gmdgraphe-titre<br>
+
+
+- Possibilit&eacute; d'utiliser la classe dans le cadre d'un
+parsing de fichier texte, et stockage des informations dans un tableau
+pour les abscisses, et des valeurs correspondantes pour les
+ordonn&eacute;es. <br>
+
+
+</p>
+
+
+<p style="color: rgb(0, 0, 0);" class="rubrique">Utilisation</p>
+
+
+<p><font face="Arial, Helvetica, sans-serif" size="2">//
+<i>Initialisation</i> :<br>
+
+
+$mygraphe = new GmdGraphe( type_graphe, tableau_abscisse,
+tableau_ordonnees );<br>
+
+
+</font><font face="Arial, Helvetica, sans-serif" size="2"><br>
+
+
+// <i>Optionnel</i> :<br>
+
+
+// ---------------<br>
+
+
+// Red&eacute;finir les valeurs des abscisses<br>
+
+
+</font><font face="Arial, Helvetica, sans-serif" size="2">$mygraphe-&gt;set_abscisse( tableau_abscisses
+); // Si tableau_abscisse == "MOIS", affichage des mois de
+l'ann&eacute;e.<br>
+
+
+// Positionner des parametres (cf "Param&egrave;tres" ci-dessous)<br>
+
+
+</font><font face="Arial, Helvetica, sans-serif" size="2">$mygraphe-&gt;set_params( width, height,
+type_graphe, couleur, grid, bg_color, format, zero, aff_label, legende);<br>
+
+
+</font><font face="Arial, Helvetica, sans-serif" size="2">// D&eacute;finir un nouveau jeux de
+donn&eacute;es dans le meme graphe :<br>
+
+
+</font><font face="Arial, Helvetica, sans-serif" size="2">$mygraphe-&gt;get_graphe( type_graphe,
+type_graphe, tableau_abscisse, tableau_ordonnees );<br>
+
+
+</font></p>
+
+
+<p><font face="Arial, Helvetica, sans-serif" size="2">//
+<i>Affichage des donn&eacute;es</i> : <br>
+
+
+</font><font face="Arial, Helvetica, sans-serif" size="2">$mygraphe-&gt;set_graphe( titre ); // image
+graphique<br>
+
+
+// et / ou <br>
+
+
+$mygraphe-&gt;aff_data( cou ); // valeurs dans un tableau;
+param&egrave;tre cou=0 =&gt; pas de couleurs dans la
+l&eacute;gende.<br>
+
+
+</font></p>
+
+
+<p><font face="Arial, Helvetica, sans-serif" size="2"><font style="color: rgb(0, 0, 0);" class="rubrique" color="#0000ff">Param&egrave;tres modifiables (optionnel)</font><span style="color: rgb(0, 0, 0);">
+</span><font color="#0000ff">via la
+m&eacute;thode
+set_params(). <br>
+
+
+Si vous ne souhaitez pas modifier un param&egrave;tre , indiquez
+-999.<br>
+
+
+</font> </font></p>
+
+
+<p><font face="Arial, Helvetica, sans-serif" size="2"><i>-
+width</i> : largeur de l'image<br>
+
+
+- <i>height</i> : hauteur de l'image<br>
+
+
+<i>- type_graphe</i> : redefinir le type du graphe = {
+histogramme | point | ligne | air | camembert } <br>
+
+
+<i>- couleur</i> : tableau de couleurs
+pr&eacute;definies :</font></p>
+
+
+<blockquote>
+  
+  <p><font face="Arial, Helvetica, sans-serif" size="2">white,
+black,<br>
+
+
+gray, egray, lgray, dgray, slategray,<br>
+
+
+blue, lblue, dblue, marine, cyan, lcyan, steelblue, lsteelblue,
+skyblue, lskyblue, navy, slateblue,<br>
+
+
+yellow, lyellow, dyellow, lime, gold,<br>
+
+
+green, lgreen, dgreen, seagreen, lseagreen, khaki,<br>
+
+
+red, lred, dred, pink, dpink, purple, lpurple, dpurple, violet,<br>
+
+
+maroon, olive, tea, silver, tan, wheat </font></p>
+
+
+</blockquote>
+
+
+<p><font face="Arial, Helvetica, sans-serif" size="2"><i>-
+grid</i> : { true | false }, true par d&eacute;faut.<br>
+
+
+<i>- bg_color</i> : couleur de fond de l'image ci-dessous. <br>
+
+
+</font><font face="Arial, Helvetica, sans-serif" size="2"><i>- format</i> : { jpg | png | gif }.
+Png par d&eacute;faut.<br>
+
+
+<i>- zero</i> : { true | false } : Axe des x
+positionn&eacute; sur 0, true par d&eacute;faut.<br>
+
+
+- aff_label : { true | false } : </font><font face="Arial, Helvetica, sans-serif" size="2">Afficher
+ou non les intitul&eacute;s des abscisses pour les camemberts.<br>
+
+
+- legende : tableau contenant les libell&eacute; des
+l&eacute;gendes pour chaque graphe, dans l'ordre des graphes
+trac&eacute;s. Indiquez -999 si vous ne souhaitez pas de
+l&eacute;gende. Pas de l&eacute;gende par d&eacute;faut.<br>
+
+
+<br>
+
+
+<b><i>Exemple : </i></b></font></p>
+
+
+<table align="center" border="1" cellpadding="3" cellspacing="4" width="80%">
+
+
+  <tbody>
+
+
+    <tr>
+
+
+      <td>
+      <font face="Arial, Helvetica, sans-serif" size="2"> $new_couleur = array ( "green", "blue", "red",
+"wheat", "seagreen", "cyan", "khaki" ); <br>
+
+
+$t_abs = array ( "un", "deux", trois" ); $t_ord = array ( 32, 25, 64 );<br>
+
+
+$legende = array ( "L&eacute;gende pour le trac&eacute; en
+histo"); </font>
+
+      <br>
+      <font face="Arial, Helvetica, sans-serif" size="2">$graphe1 = new GmdGraphe( "histogramme", $t_abs,
+$t_ord );<br>
+
+
+      <br>
+
+
+      </font><font face="Arial, Helvetica, sans-serif" size="2">// Ajout d'un autre graphe, sous forme de ligne :<br>
+
+
+$val_moy = array (28, 28, 28);<br>
+
+
+$graphe1-&gt;get_graphe( "ligne", $t_abs, $val_moy );<br>
+
+
+array_push( $legende, "Moyenne" );<br>
+
+
+      <br>
+
+
+// Affichage<br>
+
+
+      </font><font face="Arial, Helvetica, sans-serif" size="2">$graphe1-&gt;set_params( 600, 360, -999,
+$new_couleur, false, "white", -999, -999, -999, $legende );<br>
+
+
+$graphe1-&gt;set_graphe( "Exemple de graphiques" );</font>
+
+      </td>
+
+
+    </tr>
+
+
+  
+  </tbody>
+</table>
+
+
+<p>&nbsp;<span class="rubrique">D&eacute;finition de style d'affichage:</span></p>
+<p>Il est possible d'inclure les styles CSS suivants, correspondants
+respectivement (si besoin de les afficher) au titre du graphe, la
+l&eacute;gende, la liste des libell&eacute;s des tables
+d'&eacute;numerationli&eacute;s &agrave; un graphe :
+&nbsp;.gmdgraphe-titre, &nbsp;.gmdgraphe-legende,
+&nbsp;.gmdgraphe-libelle-enum</p>
+<p style="font-style: italic; font-weight: bold;">Exemple de style CSS :</p>
+<table style="width: 498px; height: 54px; text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td> .gmdgraphe-titre { font-family:arial; font-size:11px; color:#0A1A58; font-weight:bold; }<br>
+.gmdgraphe-legende { font-family:arial; font-size:11px; color:#0A1A58; font-weight:bold; }<br>
+.gmdgraphe-libelle-enum { font-family:arial; font-size:11px; color:#C0C0C0; font-weight:bold; }</td>
+    </tr>
+  </tbody>
+</table>
+<p><br>
+</p>
+<p></p>
+
+
+</body>
+</html>
