@@ -29,9 +29,7 @@ class CAffiche_graphe
 
 
 
-/*
-
-**
+/**
 *
 * NON OPERATIONNEL !!!!!!!!!!!!!!!
 *
@@ -40,7 +38,7 @@ class CAffiche_graphe
 * SORTIE :
 *	$exist=0|1 : precise l'existance prealable ou non du fichier sur disk.
 *	Si oui, positionne alors $this->nom_disk et $this->nom_web
-*
+*/
 function recherche_graphe( &$exist )
 {
 	global $erreur, $cnx, $DOCUMENT_ROOT;
@@ -95,7 +93,7 @@ function recherche_graphe( &$exist )
 }
 
 
-**
+/**
 *
 * NON OPERATIONNEL !!!!!!!!
 *
@@ -108,7 +106,7 @@ function recherche_graphe( &$exist )
 *	$msg : message de suppression ok ou nok.
 *	Retourne -1 si parametres image non existante
 *	Retourne -2 si echec de suppression
-*
+*/
 function supprime( &$msg )
 {
 	global $erreur, $cnx, $DOCUMENT_ROOT;
@@ -133,8 +131,6 @@ function supprime( &$msg )
 
 	return 0;
 }
-
-*/
 
 
 /**

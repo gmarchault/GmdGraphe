@@ -1,12 +1,10 @@
 <?php 
 require_once "bdd_dev.php";
-
 $PREFIX_BDD = "rel_";
-
-$NAVIGATEUR_MOBILE = "Mobile";
-$NAVIGATEUR_PC = "PC";
-
 $PATH_WEB_RELATIF = "/myhome";
+
+
+
 $PATH_WEB_ABSOLU = "http://$WEB$PATH_WEB_RELATIF";
 
 // Rep a purger :
@@ -31,7 +29,6 @@ require_once "../classe/cconnexion.php";
 require_once "../classe/cihm.php";
 
 // L'ordre est important :
-$ihm = new CIhm();
 $erreur = new CErreur();
 $cnx = new CConnexion( $DATABASE );
 ?>
